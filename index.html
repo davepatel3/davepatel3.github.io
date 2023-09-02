@@ -10,13 +10,108 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" integrity="sha512-YHuwZabI2zi0k7c9vtg8dK/63QB0hLvD4thw44dFo/TfBFVVQOqEG9WpviaEpbyvgOIYLXF1n7xDUfU3GDs0sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 			.bulletpoints {
 				list-style-type: disc;
 				margin-left: 20px;
 				padding-left: 0;
+
 			}
+			body {
+				margin: 0;
+				padding: 0;
+				background: #f3f5f9;
+			  }
+			  
+			  .black-box {
+				background-color: #1d1d1d;
+				width: 200px; /* Adjust the width as needed */
+				padding: 20px;
+				margin: 20px auto; /* Centers the box horizontally and adds some space from top */
+				color: white;
+				text-align: center;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			  }
+			  
+			  .dropdown {
+				text-align: center;
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 1px;
+			  }
+			  
+			  .dropbtn {
+				background-color: transparent;
+				color: black;
+				padding: 10px 15px;
+				font-size: 16px;
+				border: none;
+				cursor: pointer;
+				margin-right: 5px;
+				border: none;
+				box-shadow: none;
+				text-align: center;
+				line-height: 1;
+			  }
+			  
+			  .dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+				z-index: 1;
+				margin: 5px 0;
+				padding: 0;
+			  }
+			  
+			  .dropdown:hover .dropdown-content {
+				display: block;
+			  }
+			  
+			  .dropdown-content p {
+				color: black;
+				padding: 10px 20px;
+				text-decoration: none;
+				display: block;
+				margin:1px 0;
+			  }
+
+			  .accordion {
+				display: none;
+			}
+	
+			.panel {
+				display: none;
+				padding: 10px;
+				background-color: #f1f1f1;
+				border: 1px solid #ddd;
+			}
+	
+			.label {
+				cursor: pointer;
+				display: block;
+				padding: 10px;
+				background-color: #f1f1f1;
+				border: 1px solid #ddd;
+				margin: 5px 0;
+				font-weight: bold;
+			}
+	
+			.label:hover {
+				background-color: #ddd;
+			}
+	
+			.accordion:checked + .panel {
+				display: block;
+			}
+			  
+			  
 		</style>
 	</head>
 	<body class="is-preload">
@@ -37,7 +132,7 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#skills">Intro</a></li>
+								<li><a href="#skills">Skills</a></li>
 								<li><a href="#work">Work</a></li>
 								<li><a href="#education">Education</a></li>
 								<li><a href="#projects">Projects</a></li>
@@ -49,19 +144,12 @@
 
 				<!-- Main -->
 					<div id="main">
+						<article class="black-box" id="skills">
 
-						<!-- Skills -->
-						<article id="skills">
-							<h2 class="major">Intro</h2>
-							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-						</article>
-						
-						<!-- Languages Dropdown -->
-						<div class="dropdown">
-							<button class="dropbtn">Languages</button>
-							<div class="dropdown-content">
+							<!-- Languages Dropdown -->
+							<div class="dropdown">
+							  <button class="dropbtn">Languages</button>
+							  <div class="dropdown-content">
 								<p>Python</p>
 								<p>Java</p>
 								<p>C</p>
@@ -69,13 +157,13 @@
 								<p>SQL</p>
 								<p>HTML</p>
 								<p>CSS</p>
+							  </div>
 							</div>
-						</div>
-						
-						<!-- Tools Dropdown -->
-						<div class="dropdown">
-							<button class="dropbtn">Tools</button>
-							<div class="dropdown-content">
+						  
+							<!-- Tools Dropdown -->
+							<div class="dropdown">
+							  <button class="dropbtn">Tools</button>
+							  <div class="dropdown-content">
 								<p>Docker</p>
 								<p>Kubernetes</p>
 								<p>Microsoft Azure</p>
@@ -85,13 +173,13 @@
 								<p>Thymeleaf</p>
 								<p>Agile</p>
 								<p>Visual Studio Code</p>
+							  </div>
 							</div>
-						</div>
-						
-						<!-- Frameworks/Libraries Dropdown -->
-						<div class="dropdown">
-							<button class="dropbtn">Frameworks/Libraries</button>
-							<div class="dropdown-content">
+						  
+							<!-- Frameworks/Libraries Dropdown -->
+							<div class="dropdown">
+							  <button class="dropbtn">Libraries</button>
+							  <div class="dropdown-content">
 								<p>Tensorflow</p>
 								<p>scikit-learn</p>
 								<p>Pandas</p>
@@ -99,73 +187,81 @@
 								<p>HuggingFace</p>
 								<p>NLTK</p>
 								<p>SpringBoot</p>
+							  </div>
 							</div>
-						</div>
-						
-						<!-- OS Dropdown -->
-						<div class="dropdown">
-							<button class="dropbtn">OS</button>
-							<div class="dropdown-content">
+						  
+							<!-- OS Dropdown -->
+							<div class="dropdown">
+							  <button class="dropbtn">OS</button>
+							  <div class="dropdown-content">
 								<p>Windows</p>
 								<p>Linux</p>
+							  </div>
 							</div>
-						</div>
+						  </article>
+						
 
-						<!-- Work -->
-						<article id="work">
+						  <article id="work">
 							<h2 class="major">Work</h2>
-							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-							<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-							<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-						</article>
-						
-						<!-- Battelle - Data Science Researcher -->
-						<article id="battelle">
-							<h2 class="major">Battelle - Data Science Researcher</h2>
+							<!-- Battelle - Data Science Researcher -->
+							<h3>Battelle - Data Science Researcher</h3>
 							<ul class="bulletpoints">
-								<li>Collaborated with Battelle Research on NLP-based relation extraction using BERT Transformer and Hugging Face library.</li>
-								<li>Applied hyperparameter tuning algorithms such as Grid Search, Random Search, and Bayesian Optimization to improve BERT model performance.</li>
-								<li>Worked on models: Recurrent Neural Networks, LSTMs, K Means Clustering, Logistic Regression, SVM, and Random Forest for keyword extraction.</li>
-								<li>Pre-processed data and engineered features using Pandas and NLTK.</li>
-								<li>Effectively communicated research methodology and findings through oral presentations and written reports.</li>
+								<li><strong>Collaborated with Battelle Research:</strong> NLP-based relation extraction using BERT Transformer and Hugging Face library.</li>
+								<li><strong>Applied hyperparameter tuning algorithms:</strong> Grid Search, Random Search, and Bayesian Optimization to improve BERT model performance.</li>
+								<li><strong>Worked on models:</strong> Recurrent Neural Networks, LSTMs, K Means Clustering, Logistic Regression, SVM, and Random Forest for keyword extraction.</li>
+								<li><strong>Pre-processed data and engineered features:</strong> Using Pandas and NLTK.</li>
+								<li><strong>Effectively communicated research methodology and findings:</strong> Through oral presentations and written reports.</li>
+							</ul>
+						
+							<!-- Amazon - Store Associate -->
+							<h3>Amazon - Store Associate</h3>
+							<ul class="bulletpoints">
+								<li><strong>Provided top-notch customer service:</strong> Enhancing shopping experiences and fostering repeat business.</li>
+								<li><strong>Built positive relationships with customers:</strong> Addressing inquiries about products and services.</li>
+								<li><strong>Handled customer complaints:</strong> Quickly resolved issues to ensure customer satisfaction.</li>
+								<li><strong>Processed cash and credit transactions:</strong> Using a POS system.</li>
 							</ul>
 						</article>
 						
-						<!-- Amazon - Store Associate -->
-						<article id="amazon">
-							<h2 class="major">Amazon - Store Associate</h2>
-							<ul class="bulletpoints">
-								<li>Provided top-notch customer service, enhancing shopping experiences and fostering repeat business.</li>
-								<li>Built positive relationships with customers, addressing inquiries about products and services.</li>
-								<li>Handled customer complaints and quickly resolved issues to ensure customer satisfaction.</li>
-								<li>Processed cash and credit transactions using a POS system.</li>
-							</ul>
-						</article>
+						<style>
+							/* Add spacing between bullet points */
+							.bulletpoints li {
+								margin-bottom: 10px; /* Adjust the value as needed */
+							}
+						</style>
 
 						<!-- Education -->
 						<article id="education">
 							<h2 class="major">Education</h2>
-							<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-							<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+							<!-- Purdue University -->
+							<div class="education-entry">
+								<h3 class="subheading">Purdue University - B.S. in CS and DS</h3>
+								<ul class="bulletpoints">
+									<li>Coursework: Discrete Mathematics, Object-Oriented Programming, Linear Algebra, Calculus III, Statistics, Intro to Data Science</li>
+								</ul>
+							</div>
+							
+							<!-- James B Conant High School -->			
+							<div class="education-entry">
+								<h3 class="subheading">James B Conant - High School Diploma</h3>
+								<ul class="bulletpoints">
+									<li>Coursework: AP Computer Science A, AP Statistics, AP Calculus BC</li>
+								</ul>
+							</div>
 						</article>
 
-						<!-- Purdue University -->
-						<article id="purdue">
-							<h2 class="major">Purdue University</h2>
-							<h3 class="subheading">Bachelor of Science - Computer Science and Data Science - Graduating May 2026</h3>
-							<ul class="bulletpoints">
-								<li>Coursework: Discrete Mathematics, Object-Oriented Programming, Linear Algebra, Calculus III, Statistics</li>
-							</ul>
-						</article>
+						<style>
+							/* Add spacing between bullet points */
+							.bulletpoints li {
+								margin-bottom: 10px; /* Adjust the value as needed */
+							}
 
-						<!-- James B Conant High School -->
-						<article id="highschool">
-							<h2 class="major">James B Conant High School</h2>
-							<h3 class="subheading">High School Diploma</h3>
-							<ul class="bulletpoints">
-								<li>Coursework: AP Computer Science A, AP Statistics, AP Calculus BC</li>
-							</ul>
-						</article>
+							/* Increase font size and bold for major/degree and subheading */
+							.subheading {
+								font-size: 1.2em; /* Adjust the font size as needed */
+								font-weight: bold;
+							}
+						</style>
 
 
 						<!-- Projects -->
@@ -173,64 +269,102 @@
 							<h2 class="major">Projects</h2>
 							
 							<!-- Digit Recognition Predictor -->
-							<article id="digit-recognition">
-								<h3 class="subheading">Digit Recognition Predictor</h3>
-								<ul class="bulletpoints">
-									<li>Developed a Deep Neural Network utilizing Keras and TensorFlow for accurate prediction of handwritten digits.</li>
-									<li>Employed TensorBoard for visualizing diverse metrics and leveraged Gradio to enable users to visualize predictions of their own handwritten digits.</li>
-								</ul>
-							</article>
+							<div class="project-accordion">
+								<h3 class="subheading accordion-heading">Digit Recognition Predictor</h3>
+								<div class="accordion-content">
+									<ul class="bulletpoints">
+										<li>Developed a Deep Neural Network utilizing Keras and TensorFlow for accurate prediction of handwritten digits.</li>
+										<li>Employed TensorBoard for visualizing diverse metrics and leveraged Gradio to enable users to visualize predictions of their own handwritten digits.</li>
+									</ul>
+								</div>
+							</div>
 
 							<!-- NBA Games Visualization -->
-							<article id="nba-visualization">
-								<h3 class="subheading">NBA Data Visualization</h3>
-								<ul class="bulletpoints">
-									<li>Collected NBA game data by making API calls, dynamically fetching information based on user-selected dates.</li>
-									<li>Employed Dash and Plotly to develop an interactive web visualization showcasing NBA game locations on a map along with diverse statistical insights.</li>
-								</ul>
-							</article>
+							<div class="project-accordion">
+								<h3 class="subheading accordion-heading">NBA Data Visualization</h3>
+								<div class="accordion-content">
+									<ul class="bulletpoints">
+										<li>Collected NBA game data by making API calls, dynamically fetching information based on user-selected dates.</li>
+										<li>Employed Dash and Plotly to develop an interactive web visualization showcasing NBA game locations on a map along with diverse statistical insights.</li>
+									</ul>
+								</div>
+							</div>
 
 							<!-- Book Recommendation System -->
-							<article id="book-recommendation">
-								<h3 class="subheading">Book Recommendation System</h3>
-								<ul class="bulletpoints">
-									<li>Implemented a user-friendly database search system enabling users to explore diverse books based on multiple search parameters.</li>
-									<li>Designed a personalized book prediction system that presents users with tailored recommendations using their historical checkout data.</li>
-								</ul>
-							</article>
+							<div class="project-accordion">
+								<h3 class="subheading accordion-heading">Book Recommendation System</h3>
+								<div class="accordion-content">
+									<ul class="bulletpoints">
+										<li>Implemented a user-friendly database search system enabling users to explore diverse books based on multiple search parameters.</li>
+										<li>Designed a personalized book prediction system that presents users with tailored recommendations using their historical checkout data.</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="github-link">
+								<p>Check out these projects on my <a href="https://github.com/davepatel3">GitHub</a> profile.</p>
+							</div>
 						</article>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
+						<style>
+							/* Add spacing between bullet points */
+							.bulletpoints li {
+								margin-bottom: 10px; /* Adjust the value as needed */
+							}
+							.accordion-heading {
+								padding: 10px; /* Adjust the padding as needed */
+								text-align: center;
+							}
 
+							/* Increase font size and bold for subheading */
+							.subheading {
+								font-size: 1.2em; /* Adjust the font size as needed */
+								font-weight: bold;
+							}
+
+							/* Accordions styling */
+							.project-accordion {
+								border: 1px solid #ddd;
+								margin-bottom: 20px;
+								padding: 10px;
+							}
+							.github-link {
+								margin-top: 20px; /* Adjust the margin as needed */
+							}
+
+							.project-accordion .subheading {
+								cursor: pointer;
+							}
+
+							.accordion-content {
+								display: none;
+								margin-top: 10px;
+							}
+						</style>
+
+						<script>
+							// Add click event to toggle accordion content
+							const projectAccordions = document.querySelectorAll('.project-accordion');
+
+							projectAccordions.forEach(accordion => {
+								const subheading = accordion.querySelector('.subheading');
+								const content = accordion.querySelector('.accordion-content');
+
+								subheading.addEventListener('click', () => {
+									content.style.display = content.style.display === 'none' ? 'block' : 'none';
+								});
+							});
+						</script>
+
+						<!-- Contact -->
+						<article id="contact">
+							<h2 class="major">Contact</h2>
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/davepatel09/" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
+								<li><a href="https://github.com/davepatel3" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://medium.com/@davepatel3" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+							</ul>
+						</article>
 						<!-- Elements -->
 							<article id="elements">
 								<h2 class="major">Elements</h2>
